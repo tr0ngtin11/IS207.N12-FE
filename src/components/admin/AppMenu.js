@@ -66,19 +66,20 @@ const AppMenu = () => {
   // };
   const logout = () => {
     localStorage.removeItem("cartItems");
+    localStorage.removeItem("role");
     navigate("/signin");
   };
 
   const navigaStaff = () => {
     const role = window.localStorage.getItem("role");
-    if (role != "admin") message.error("Bạn không có quyền truy cập");
-    else navigate("/staff");
+    if (role != "quanli") message.error("Bạn không có quyền truy cập");
+    else navigate("/admin/staff");
   };
 
   const navigateKhuyenMai = () => {
     const role = window.localStorage.getItem("role");
-    if (role != "admin") message.error("Bạn không có quyền truy cập");
-    else navigate("/khuyenmai");
+    if (role != "quanli") message.error("Bạn không có quyền truy cập");
+    else navigate("/admin/khuyenmai");
   };
   // Return menu items here
   const items = [

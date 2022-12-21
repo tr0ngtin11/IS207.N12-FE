@@ -53,7 +53,7 @@ const productSlice = createSlice({
         const filterProduct = state.totalProduct.filter((product) => {
           console.log(payload, product.TenSP);
 
-          return product.TenSP.includes(payload);
+          return product.TenSP.toLowerCase().includes(payload.toLowerCase());
         });
         state.products = filterProduct;
       } else state.products = state.totalProduct;

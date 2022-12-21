@@ -197,6 +197,7 @@ const BillDetailadmin = () => {
                 topping={item.Topping}
                 item={item}
                 id={item.MaSP}
+                HinhAnh={item.HinhAnh}
               />
             );
           })}
