@@ -73,10 +73,7 @@ const Product = ({
             <p className="mb-1">+{item.name}</p>
           ))}
           <p className="text-[#146d4d] text-[1rem] mt-2 mb-0">
-            {item.size == "L"
-              ? (item.price + 5000).toLocaleString()
-              : item.price.toLocaleString()}
-            VND
+            {totalProduct.toLocaleString()} VND
           </p>
         </div>
       </Col>

@@ -81,7 +81,7 @@ const Dashboard = () => {
             0
           );
           dataHoaDon.push({
-            thang: "Tháng" + " " + (index + 1),
+            thang: "Tháng" + " " + (index + 2),
             tongtien: total,
           });
         }
@@ -94,15 +94,12 @@ const Dashboard = () => {
               label: "Doanh thu",
               data: dataHoaDon1.map((item) => item?.tongtien),
               backgroundColor: [
-                "rgba(75, 192, 192, 1)",
-                "#FF6384",
-                "#50AF95",
                 "#FFCE56",
-                "#36A2EB",
-                "#FF6384",
                 "#50AF95",
-                "#FFCE56",
+                "#FF6384",
                 "#36A2EB",
+                "#B200ED",
+                "#BF0A30Q",
               ],
               borderColor: "black",
               borderWidth: 1,
