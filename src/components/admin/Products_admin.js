@@ -44,7 +44,7 @@ const Products_admin = () => {
   };
   const handleClickDeleteProduct = async (e) => {
     const role = window.localStorage.getItem("role");
-    if (role == "admin") {
+    if (role == "quanli") {
       const id = e.target.id;
       Modal.confirm({
         title: "Cảnh báo",
@@ -77,8 +77,8 @@ const Products_admin = () => {
   );
 
   const handleClickAddProduct = (e) => {
-    if (user.role == "admin") navigate("/admin/product/add-product");
-    message.error("Bạn không được phép thêm sản phẩm");
+    if (user.role == "quanli") navigate("/admin/product/add-product");
+    else message.error("Bạn không được phép thêm sản phẩm");
   };
   const columns = [
     {

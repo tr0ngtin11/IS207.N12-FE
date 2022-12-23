@@ -99,7 +99,7 @@ const Dashboard = () => {
                 "#FF6384",
                 "#36A2EB",
                 "#B200ED",
-                "#BF0A30Q",
+                "#BF0A30",
               ],
               borderColor: "black",
               borderWidth: 1,

@@ -187,7 +187,7 @@ export default function Register() {
         <Col span={16} offset={4}>
           <div className="flex-col w-full mt-3 ">
             <Title className="text-center font-SignIn font-extrabold text-[1.7rem] w-full h-[2.5rem]  mb-0">
-              WELCOME BACK!D
+              WELCOME BACK!!
             </Title>
             <p className="w-3/4 mb-0 mx-auto mt-[-0.3rem] text-center">
               We are so happy to see you again.

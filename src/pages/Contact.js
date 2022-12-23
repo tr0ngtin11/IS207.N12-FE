@@ -12,7 +12,7 @@ const Contact = () => {
           <Link to="/">Trang chủ</Link>
         </Breadcrumb.Item>
 
-        <Breadcrumb.Item>Blog</Breadcrumb.Item>
+        <Breadcrumb.Item>Liên Hệ</Breadcrumb.Item>
       </Breadcrumb>
       <Row className="w-full">
         <Col span={11}>

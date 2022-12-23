@@ -116,7 +116,7 @@ const AddProduct = () => {
           />
         )}
 
-        <div className="w-full ml-4">
+        <div className="w-full">
           <Title className=" " level={3}>
             PRODUCT
           </Title>
