@@ -150,7 +150,7 @@ const Profile = () => {
         />
         <div className="w-full">
           <Title className=" " level={3}>
-            PROFILE
+            Hồ sơ cá nhân
           </Title>
 
           {/* <input
@@ -162,7 +162,7 @@ const Profile = () => {
 
           <div className="flex w-full justify-between">
             <Title className=" " level={5}>
-              Update your photo and personal details.
+              Cập nhật hình ảnh và thông tin cá nhân của bạn.
             </Title>
 
             <Button

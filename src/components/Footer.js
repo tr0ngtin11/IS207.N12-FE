@@ -107,11 +107,11 @@ const Footer = () => {
             </Title>
             <div className="flex-col block my-8">
               <Text className="text-[#CCCCCC] my-2 ">
-                Address: 2512 Ninh Kieu, Thu Duc, TP.HCM
+                Địa chỉ: Hẻm 12/24 Đ. số 9, Linh Trung, Thủ Đức, TPHCM
               </Text>
               <div className="my-4">
-                <Text className="text-[#CCCCCC] mr-2  ">Phone:</Text>
-                <Text className="text-[#fff]">+24 1600-33-999</Text>
+                <Text className="text-[#CCCCCC] mr-2  ">SĐT:</Text>
+                <Text className="text-[#fff]">+84 1600-33-999</Text>
               </div>
               <div className="my-4">
                 <Text className="text-[#CCCCCC] mr-2  ">E-mail:</Text>

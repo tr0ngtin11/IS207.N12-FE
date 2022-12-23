@@ -135,15 +135,15 @@ const Cart = () => {
       <Row gutter={35} className="h-full">
         <Col className="h-full mb-10 " span={16}>
           <Row className="w-full h-[10vh] border-y-[0.01rem] border-solid border-[#CFCFCF] text-[#ABABAB] flex items-center justify-center ">
-            <Col span={12}>PRODUCT DETAILS</Col>
+            <Col span={12}>SẢN PHẨM</Col>
             <Col className="flex justify-center" span={4}>
-              QUANTITY
+              SỐ LƯỢNG
             </Col>
             <Col className="flex justify-center" span={4}>
-              TOTAL
+              TỔNG CỘNG
             </Col>
             <Col className="flex justify-center" span={4}>
-              REMOVE
+              XÓA
             </Col>
           </Row>
           {cartItems_state.map((item, index) => {
@@ -174,11 +174,11 @@ const Cart = () => {
               className="border-b-[0.01rem] border-solid border-[#C6BDBD] py-3 mt-3"
               level={5}
             >
-              ORDER SUMMARY
+              TỔNG ĐƠN
             </Title>
             <div className="w-full border-b-[0.01rem] pb-16 border-solid border-[#C6BDBD] ">
               <div className="w-full flex mt-10 justify-between ">
-                <p>Tổng Cộng</p>
+                <p>Thành Tiền</p>
                 <p>{prevKM.toLocaleString()}</p>
               </div>
               <div className="w-full flex mt-10 justify-between ">
@@ -199,7 +199,7 @@ const Cart = () => {
                 onClick={handleClickCheckOut}
                 className="bg-[#146d4d] w-full rounded-md py-[1rem] flex justify-center items-center text-[#fff] text-[0.7rem] font-bold"
               >
-                CHECKOUT
+                THANH TOÁN
               </Button>
             )}
           </div>

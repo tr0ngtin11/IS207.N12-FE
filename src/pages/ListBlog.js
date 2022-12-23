@@ -72,11 +72,12 @@ const ListBlog = () => {
       </div>
 
       <Row gutter={36}>
-        {isLoading && <Spin indicator={antIcon} />}
+        {/* {isLoading && <Spin indicator={antIcon} />} */}
         {blogs.map((item, index) => {
           return (
             <Col id={item.id} className="mt-5 " span={8}>
               <Card
+                loading={isLoading}
                 onClick={(e) => handleClickDetailBlog(e)}
                 id={item.id}
                 size="small"

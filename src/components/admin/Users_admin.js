@@ -100,7 +100,7 @@ const Users_admin = () => {
       <div className="w-full my-5 flex justify-start ">
         <Search
           className="w-[15rem]"
-          placeholder="Tìm kiếm người dùng"
+          placeholder="Tìm kiếm khách hàng"
           onChange={(e) => onSearch(e)}
           style={{
             marginLeft: "20px",
@@ -112,11 +112,11 @@ const Users_admin = () => {
           className="w-[12rem] flex items-center justify-center accent-[#146d4d] hover:text-[#146d4d] hover:border-[#146d4d]  ml-[20px] "
         >
           <UserAddOutlined className="h-full pr-1" />
-          <p className="mb-0 h-full">Thêm người dùng</p>
+          <p className="mb-0 h-full">Thêm khách hàng</p>
         </Button>
       </div>
       <div className="px-4 pt-4 pb-14 bg-[#F0F2F5]">
-        <p className="text-[1.3rem] font-bold mb-1">Người dùng</p>
+        <p className="text-[1.3rem] font-bold mb-1">Khách hàng</p>
         <Table
           pagination={false}
           style={{

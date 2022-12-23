@@ -221,7 +221,7 @@ const Orders_admin = () => {
       key: "DiaChi",
     },
     {
-      title: "Action",
+      title: "Thao tác",
       key: "action",
       render: (_, record) => (
         <Space size="middle">

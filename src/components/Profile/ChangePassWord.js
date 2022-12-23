@@ -91,7 +91,7 @@ return (
     <div className="flex items-center mb-8 w-full ">
       <div className="w-full">
         <Title className=" " level={3}>
-          PASSWORD
+          Thay đổi mật khẩu
         </Title>
         {/* <input
             // className="hidden"
@@ -101,7 +101,8 @@ return (
           /> */}
         <div className="flex w-full justify-between">
           <Title className=" " level={5}>
-            Please never share or give out your password.
+            Vui lòng không bao giờ chia sẻ mật khẩu hoặc cung cấp mật khẩu cho
+            bất kỳ ai.
           </Title>
           <Button
             onClick={handleSubmitUpdatePassWord}

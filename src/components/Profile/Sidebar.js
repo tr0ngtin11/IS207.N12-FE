@@ -17,10 +17,10 @@ const Sidebar = () => {
           <Link to="/">Trang chủ</Link>
         </Breadcrumb.Item>
 
-        <Breadcrumb.Item>Thông tin tài khoản</Breadcrumb.Item>
+        <Breadcrumb.Item>Quản lý tài khoản</Breadcrumb.Item>
       </Breadcrumb>
       <Title className="ml-5 border-b-2 border-solid pb-5" level={2}>
-        PROFILE
+        QUẢN LÝ TÀI KHOẢN
       </Title>
       <Tabs
         className="text-left h-full"
@@ -31,11 +31,11 @@ const Sidebar = () => {
           height: 220,
         }}
         items={arrayProfile.map((item, i) => {
-          let label = "Profile";
+          let label = "Thông tin cá nhân";
           const id = i;
-          if (id === 0) label = "Profile";
-          else if (id === 1) label = "Password";
-          else if (id === 2) label = "Orders";
+          if (id === 0) label = "Thông tin cá nhân";
+          else if (id === 1) label = "Thay đổi mật khẩu";
+          else if (id === 2) label = "Đơn đặt";
 
           return {
             label: label,

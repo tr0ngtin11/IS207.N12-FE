@@ -2,9 +2,10 @@ import React from "react";
 import { Card, Col, Row, Typography } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
-import Ava1 from "../../images/avatar/avatar1.jpg";
-import Ava2 from "../../images/avatar/avatar2.jpg";
-import Ava3 from "../../images/avatar/avatar3.jpg";
+import Ava1 from "../../images/Anh.jpg";
+import Ava2 from "../../images/Long.png";
+import Ava3 from "../../images/Nhung.jpg";
+import Ava4 from "../../images/Tin.jpg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -73,7 +74,7 @@ export default function Feedback() {
                 italic={true}
                 className="text-[1.4rem]  font-normal text-[#146d4d] "
               >
-                Trọng Tín
+                Ngọc Ánh
               </Text>
             </div>
           </div>
@@ -96,7 +97,7 @@ export default function Feedback() {
                 italic={true}
                 className="text-[1.4rem]  font-normal text-[#146d4d] "
               >
-                Mỹ Nhung
+                Hữu Long
               </Text>
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function Feedback() {
                 italic={true}
                 className="text-[1.4rem]  font-normal text-[#146d4d] "
               >
-                Ngọc Ánh
+                Mỹ Nhung
               </Text>
             </div>
           </div>
@@ -128,7 +129,7 @@ export default function Feedback() {
             <Img
               className=" hover:overflow-hidden w-[9rem] h-[9rem] rounded-full cursor-pointer mx-auto"
               alt="example"
-              src={Ava3}
+              src={Ava4}
             />
             <Text className="text-[1.2rem] block text-center w-[60rem] my-2 mx-auto ">
               Không gian quán đẹp, mở nhạc hợp gu mình 👏🏻👏🏻 mấy bạn nhân viên
@@ -139,7 +140,7 @@ export default function Feedback() {
                 italic={true}
                 className="text-[1.4rem]  font-normal text-[#146d4d] "
               >
-                Hữu Long
+                Trọng Tín
               </Text>
             </div>
           </div>

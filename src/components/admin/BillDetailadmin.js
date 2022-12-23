@@ -208,7 +208,7 @@ const BillDetailadmin = () => {
               className="border-b-[0.01rem] border-solid border-[#C6BDBD] py-3 mt-3"
               level={5}
             >
-              ORDER SUMMARY
+              TỔNG ĐƠN
             </Title>
             <div className="w-full border-b-[0.01rem] pb-16 border-solid border-[#C6BDBD] ">
               <div className="w-full flex mt-10 justify-between ">

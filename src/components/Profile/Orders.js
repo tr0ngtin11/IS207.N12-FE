@@ -82,7 +82,7 @@ const Orders = () => {
       <div className="flex items-center mb-8 w-full ">
         <div className="w-full">
           <Title className=" " level={3}>
-            Orders
+            Đơn đặt
           </Title>
           {/* <input
             // className="hidden"
@@ -90,9 +90,6 @@ const Orders = () => {
             name="myImage"
             onChange={(e) => onChangeImage(e)}
           /> */}
-          <Title className=" " level={5}>
-            Your orders will be displayed here.
-          </Title>
         </div>
       </div>
       <Row>

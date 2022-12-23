@@ -22,7 +22,7 @@ const About = () => {
         />
       </div>
 
-      <Title level={2} className="mt-5 text-[#146d4d]">
+      <Title className="mt-5 text-[#146d4d] text-[2.2rem]">
         TỪ PHONG CÁCH UỐNG CÀ PHÊ ĐẾN VIỆC THÀNH LẬP MORII COFFEE
       </Title>
       <p>12/12/2022</p>

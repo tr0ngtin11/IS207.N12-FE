@@ -110,7 +110,7 @@ const Products_admin = () => {
       key: "type",
     },
     {
-      title: "Action",
+      title: "Thao tác",
       key: "action",
       render: (_, record) => (
         <Space size="middle">

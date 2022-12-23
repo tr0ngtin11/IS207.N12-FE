@@ -76,7 +76,7 @@ const HoaDon = () => {
       key: "isOnline",
     },
     {
-      title: "Action",
+      title: "Thao tác",
       key: "action",
       render: (_, record) => (
         <Space size="middle">

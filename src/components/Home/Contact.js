@@ -17,7 +17,7 @@ export default function Contact() {
             Chúng tôi có thể giúp gì cho bạn? Liên hệ ngay:
           </Paragraph>
           <Paragraph className="text-[#146d4d] text-[1rem] mx-2 ">
-            +(21) 255 999 8899
+            (+84) 1600-33-999
           </Paragraph>
         </div>
         <div className="flex h-[2.5rem] w-[15rem] justify-between">
