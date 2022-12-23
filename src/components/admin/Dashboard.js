@@ -109,7 +109,7 @@ const Dashboard = () => {
         const hoadon2 = hoadon4.filter((item) => parseInt(item.isOnline) == 1);
         let total1 = hoadon2.reduce((accumulator, currentValue) => {
           if (currentValue.isOnline == 1) {
-            return accumulator + 1;
+            return accumulator + currentValue.TongTien;
           } else {
             return accumulator;
           }
@@ -121,7 +121,7 @@ const Dashboard = () => {
         const hoadon3 = hoadon4.filter((item) => parseInt(item.isOnline) != 1);
         let total2 = hoadon3.reduce((accumulator, currentValue) => {
           if (currentValue.isOnline != 1) {
-            return accumulator + 1;
+            return accumulator + currentValue.TongTien;
           } else {
             return accumulator;
           }
@@ -135,7 +135,7 @@ const Dashboard = () => {
           labels: dataMuaHang.map((item) => item?.loai),
           datasets: [
             {
-              label: "Số lượng",
+              label: "Doanh Thu",
               data: dataMuaHang.map((item) => item?.soluong),
               backgroundColor: [
                 "rgba(75, 192, 192, 1)",

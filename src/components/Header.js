@@ -12,15 +12,18 @@ export default function Header() {
   const { Text } = Typography;
   const [y, setY] = useState(0);
   const [isShowCount, setIsShowCount] = useState(false);
+  const [bgNav, setBgNav] = useState("bg-[#fff]");
+  const [txtNav, setTxtNav] = useState("text-[#000]");
+  const [borderNav, setBorderNav] = useState("border-black");
   // const [bgNav, setBgNav] = useState("");
   // const [txtNav, setTxtNav] = useState("text-[#fff]");
   // const [borderNav, setBorderNav] = useState("border-white");
   const { isAuthenticated } = useSelector((state) => state.auth);
   const { numberProduct } = useSelector((state) => state.product);
   const { user } = useSelector((state) => state.user);
-  const [bgNav, setBgNav] = useState("bg-[#fff]");
-  const [txtNav, setTxtNav] = useState("text-[#000]");
-  const [borderNav, setBorderNav] = useState("border-[#000]");
+  // const [bgNav, setBgNav] = useState("bg-[#fff]");
+  // const [txtNav, setTxtNav] = useState("text-[#000]");
+  // const [borderNav, setBorderNav] = useState("border-[#000]");
   const [isShowDropdown, setIsShowDropdown] = useState(false);
   const [count, setCount] = useState(numberProduct);
   const handleClickProfile = () => {
@@ -37,36 +40,63 @@ export default function Header() {
       }
     }
   }, [user]);
+  // const handleNavigation = useCallback(
+  //   (e) => {
+  //     const window = e.currentTarget;
+
+  //     if (y > 80) {
+  //       setBgNav("bg-[#fff]");
+  //       setTxtNav("text-[#000]");
+  //       setBorderNav("border-[#000]");
+  //     } else {
+  //       setBgNav("");
+  //       setTxtNav("text-[#fff]");
+  //       setBorderNav("border-white");
+  //       // setBgNav("bg-[#fff]");
+  //       // setTxtNav("text-[#000]");
+  //       // setBorderNav("border-[#000]");
+  //     }
+  //     setY(window.scrollTop);
+  //   },
+  //   [y]
+  // );
   const handleNavigation = useCallback(
     (e) => {
-      const window = e.currentTarget;
-
-      if (y > 80) {
-        setBgNav("bg-[#fff]");
-        setTxtNav("text-[#000]");
-        setBorderNav("border-[#000]");
-      } else {
-        // setBgNav("");
-        // setTxtNav("text-[#fff]");
-        // setBorderNav("border-white");
-        setBgNav("bg-[#fff]");
-        setTxtNav("text-[#000]");
-        setBorderNav("border-[#000]");
-      }
-      setY(window.scrollTop);
+      // const window = e.currentTarget;
+      // console.log(window.scrollY, "target");
+      // // console.log(window.scrollTop);
+      // if (y > 80) {
+      //   setBgNav("bg-[#fff]");
+      //   setTxtNav("text-[#000]");
+      //   setBorderNav("border-[#000]");
+      // } else {
+      //   setBgNav("");
+      //   setTxtNav("text-[#fff]");
+      //   setBorderNav("border-white");
+      // }
+      // setY(window.scrollY);
     },
     [y]
   );
 
-  useEffect(() => {
-    setY(document.body.scrollTop);
-    document.body.addEventListener("scroll", handleNavigation);
+  // useEffect(() => {
+  //   console.log(window.scrollY);
+  //   // console.log(y);
+  //   setY(window.scrollY);
+  //   window.addEventListener("scroll", handleNavigation);
 
-    return () => {
-      document.body.removeEventListener("scroll", handleNavigation);
-    };
-  }, [handleNavigation]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleNavigation);
+  //   };
+  // }, [handleNavigation]);
+  // useEffect(() => {
+  //   setY(document.body.scrollTop);
+  //   document.body.addEventListener("scroll", handleNavigation);
 
+  //   return () => {
+  //     document.body.removeEventListener("scroll", handleNavigation);
+  //   };
+  // }, [handleNavigation]);
   // var cartItems = null;
   useEffect(() => {
     console.log("numberProduct", numberProduct);
@@ -157,14 +187,14 @@ export default function Header() {
           {/* a triangle by taiwind css */}
           <div>
             <div
-              className={`fixed top-[3.8rem] right-[7.6rem]
+              className={` transition-all  duration-500  fixed top-[3.8rem] right-[7.6rem]
               z-[1000] w-[10rem] rounded-md shadow-xl
                  h-[10rem] bg-[#146d4d] text-[#fff] before:fixed before:content-[''] before:top-[3.3rem] before:right-[10.5rem]  before:border-solid before:w-0 before:h-0 before:border-x-[8px] before:border-b-[8px] before:border-x-transparent before:border-b-[#146d4d] ${
                    isShowDropdown ? "" : "hidden "
                  } `}
             >
               <a
-                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold"
+                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold  transition-all  duration-500  "
                 href="/profile"
               >
                 <div className="w-6 h-6 mr-1 ">
@@ -186,7 +216,7 @@ export default function Header() {
                 <p className="mb-0">Tài khoản của tôi</p>
               </a>
               <a
-                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold"
+                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold  transition-all  duration-500 "
                 href="/profile"
               >
                 <div className="w-6 h-6 mr-1 ">
@@ -210,7 +240,7 @@ export default function Header() {
                 </p>
               </a>
               <a
-                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold"
+                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold  transition-all  duration-500 "
                 href="/profile"
               >
                 <div className="w-6 h-6 mr-1 ">
@@ -235,7 +265,7 @@ export default function Header() {
               </a>
               <a
                 onClick={handleClickLogout}
-                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold"
+                className="text-[#fff] flex items-center pl-[0.4rem] py-2 hover:bg-white hover:opacity-90 hover:text-[#146d4d] hover:font-bold  transition-all  duration-500 "
                 href="#"
               >
                 <div className="w-6 h-6 mr-1 ">
@@ -271,7 +301,7 @@ export default function Header() {
                 className="flex items-center w-8rem h-full z-50"
               >
                 {user && (
-                  <p className="text-[#000] mb-0 mr-3 mt-2 cursor-pointer">
+                  <p className={`${txtNav} mb-0 mr-3 mt-2 cursor-pointer `}>
                     {user.hoten}
                   </p>
                 )}

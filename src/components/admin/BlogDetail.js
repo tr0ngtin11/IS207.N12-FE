@@ -4,9 +4,8 @@ import Title from "antd/lib/typography/Title";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import { getAllBlogs } from "../../api/admin/Blog";
-
+import styled from "styled-components";
 import "./blogDetail.css";
 
 const BlogDetail = () => {
@@ -81,7 +80,7 @@ const BlogDetail = () => {
         {data.MoTa}
       </Title>
       <div>
-        <td dangerouslySetInnerHTML={{ __html: data.NoiDung }} />
+        <div dangerouslySetInnerHTML={{ __html: data.NoiDung }} />
       </div>
 
       <div className="w-full flex justify-end">
