@@ -48,6 +48,8 @@ export default function Register() {
     role: "khachhang",
     password: "",
     password_confirmation: "",
+    urlavt:
+      "https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg",
   });
   const checkForNumbers = (string) => {
     var matches = string.match(/\d+/g);

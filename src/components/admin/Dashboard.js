@@ -76,10 +76,12 @@ const Dashboard = () => {
             (item1) => new Date(item1?.NgayHD).getMonth() === thang
           );
 
-          let total = hoadon2.reduce(
-            (accumulator, currentValue) => accumulator + currentValue.TongTien,
-            0
-          );
+          let total = hoadon2.reduce((accumulator, currentValue) => {
+            if (currentValue.TrangThai == "Đã giao") {
+              return accumulator + currentValue.TongTien;
+            }
+            return accumulator;
+          }, 0);
           dataHoaDon.push({
             thang: "Tháng" + " " + (index + 2),
             tongtien: total,

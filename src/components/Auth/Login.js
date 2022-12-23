@@ -80,9 +80,11 @@ export default function Login() {
             {
               hoten: result.user.displayName,
               email: result.user.email,
+
               role: "khachhang",
               password: result.user.uid,
               password_confirmation: result.user.uid,
+             
             },
             navigate
           )
