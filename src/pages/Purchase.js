@@ -81,7 +81,7 @@ const Purchase = () => {
       list: arrayInput,
       SDT: userInfo.sdt,
       DiaChi: userInfo.diachi,
-      GhiChu: userInfo.ghichu,
+      GhiChu: userInfo.ghichu || "",
     };
     // const formDataJSON = JSON.stringify(formData);
     console.log(formData);
