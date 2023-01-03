@@ -141,7 +141,7 @@ const Profile = () => {
           src={
             <Image
               preview={false}
-              className="w-36 h-auto rounded-full"
+              className="w-36 h-auto "
               src={user.urlavt}
               alt="avatar"
             />
