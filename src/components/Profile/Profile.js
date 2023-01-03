@@ -141,14 +141,14 @@ const Profile = () => {
           src={
             <Image
               preview={false}
-              className="w-36 h-36"
+              className="w-36 h-auto rounded-full"
               src={user.urlavt}
               alt="avatar"
             />
           }
-          className="w-36 h-36 mr-8"
+          className="w-36 h-auto "
         />
-        <div className="w-full">
+        <div className="w-full ml-8">
           <Title className=" " level={3}>
             Hồ sơ cá nhân
           </Title>
@@ -220,14 +220,14 @@ const Profile = () => {
               src={
                 <Image
                   preview={false}
-                  className="w-16 h-16"
+                  className="w-16 h-auto"
                   src={userInfo.urlavt}
                   alt="avatar"
                 />
               }
-              className="w-16 h-16 "
+              className="w-16 h-auto "
             />
-            <p className="mb-0 w-[25rem]">
+            <p className="mb-0 w-[25rem] ml-2">
               This will be displayed on your profile.
             </p>
             <input
