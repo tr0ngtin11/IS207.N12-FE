@@ -57,7 +57,13 @@ const Purchase = () => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     console.log(userInfo);
   };
+  
+  const handleChangeNote = (e) => {
+    setUserInfo({ ...userInfo, ghichu: e.target.value });
+  };
+
   useEffect(() => {
+    console.log("usserne", user);
     setUserInfo(user);
   }, [status]);
   useEffect(() => {
@@ -65,7 +71,18 @@ const Purchase = () => {
   }, [isAuthenticated, status]);
 
   const handleClickPurchase = async () => {
-    var formData = { MaKH: user.id, list: arrayInput };
+    var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    if (vnf_regex.test(userInfo.sdt) == false) {
+      message.error("Số điện thoại không hợp lệ");
+      return;
+    }
+    var formData = {
+      MaKH: user.id,
+      list: arrayInput,
+      SDT: userInfo.sdt,
+      DiaChi: userInfo.diachi,
+      GhiChu: userInfo.ghichu,
+    };
     // const formDataJSON = JSON.stringify(formData);
     console.log(formData);
     await PurchaseApi(formData);
@@ -101,7 +118,7 @@ const Purchase = () => {
         <Input
           type="text"
           size="medium"
-          name="name"
+          name="hoten"
           placeholder="Họ tên"
           className="rounded-md py-2 my-3 placeholder:font-SignIn placeholder:font-semibold placeholder:text-[#595959] placeholder:text-[0.7rem] pl-4  "
           onChange={(e) => handleChangeForm(e)}
@@ -111,7 +128,7 @@ const Purchase = () => {
         <Input
           type="text"
           size="medium"
-          name="phone"
+          name="sdt"
           placeholder="Số điện thoại"
           className="rounded-md py-2 mb-3  placeholder:font-SignIn placeholder:font-semibold placeholder:text-[#595959] placeholder:text-[0.7rem] pl-4  "
           onChange={(e) => handleChangeForm(e)}
@@ -127,6 +144,7 @@ const Purchase = () => {
           onChange={(e) => handleChangeForm(e)}
           value={userInfo.email}
           required
+          disabled
         />
         <Input
           type="text"
@@ -179,11 +197,11 @@ const Purchase = () => {
         <Input
           type="text"
           size="medium"
-          name="address"
+          name="ghichu"
           placeholder="Note (Không bắt buộc)"
           className="rounded-md py-2 mb-3 placeholder:font-SignIn placeholder:font-semibold placeholder:text-[#595959] placeholder:text-[0.7rem] pl-4  "
-          //   onChange={(e) => handleChangeForm(e)}
-          //   value={userInfo.email}
+          onChange={(e) => handleChangeNote(e)}
+          value={userInfo.ghichu}
           required
         />
 

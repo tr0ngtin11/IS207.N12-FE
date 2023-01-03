@@ -14,6 +14,7 @@ import {
   FacebookAuthProvider,
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+// import { E } from "chart.js/dist/chunks/helpers.core";
 
 export default function Login() {
   const firebaseConfig = {
@@ -44,6 +45,19 @@ export default function Login() {
   const handleFormChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
+
+  
+
+  useEffect(() => {
+    const handleSubmitEnter = async (e) => {
+      if (e.code == "Enter") dispatch(login(userInfo, navigate));
+    };
+    document.addEventListener("keydown", handleSubmitEnter);
+    return () => {
+      document.removeEventListener("keydown", handleSubmitEnter);
+    };
+   }, [userInfo]);
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +98,6 @@ export default function Login() {
               role: "khachhang",
               password: result.user.uid,
               password_confirmation: result.user.uid,
-             
             },
             navigate
           )
