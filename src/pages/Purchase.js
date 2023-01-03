@@ -1,7 +1,8 @@
-import { Col, Input, Row, Radio, Button } from "antd";
+import { Col, Input, Row, Radio, Button, message } from "antd";
 import Title from "antd/lib/typography/Title";
 import axios from "axios";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -20,12 +21,18 @@ const Purchase = () => {
   const giaKM = location.state.giaKM;
   const prevKm = location.state.prevKm;
   var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  var listMail = cartItems.map((item) => item.name);
   const { user, status, updateStatus, isLoading } = useSelector(
     (state) => state.user
   );
   const { selectedKhuyenmai, khuyenmais } = useSelector(
     (state) => state.khuyenmai_admin
   );
+  const [templateParams, setTemplateParams] = useState({
+    MaKH: user.id,
+    username_mail: user.email,
+    list_Order: listMail.toString(),
+  });
   cartItems.map((item) => {
     if (selectedKhuyenmai) {
       var maKm = selectedKhuyenmai.id;
@@ -64,7 +71,24 @@ const Purchase = () => {
     await PurchaseApi(formData);
     localStorage.removeItem("cartItems");
     navigate("/profile", { state: { default: 2 } });
-    window.location.reload();
+    emailjs
+      .send(
+        "service_bnk4p9n",
+        "template_a1j1bot",
+        templateParams,
+        "G2m-hpF_YM594u7IJ"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          message.success("Gửi Email thành công");
+          // navigate("/code-validation");
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+    // window.location.reload();
   };
 
   return (

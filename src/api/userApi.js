@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8000/api";
+const baseUrl = "https://is207n12-be-production.up.railway.app/api";
 
 export const  fetchUser = () => {
   return new Promise(async (resolve, reject) => {

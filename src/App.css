@@ -14,3 +14,6 @@ input[type=number] {
 .ck-editor__editable_inline {
     min-height: 140px;
 }
+.anticon svg {
+    display: block;
+}
