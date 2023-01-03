@@ -23,6 +23,7 @@ const Cart = () => {
   );
   const [quantityProduct, setQuantityProduct] = useState(1);
   var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  console.log("cartItems", cartItems);
   const [cartItems_state, setCarrItems_state] = useState(cartItems);
   const [totalCart, setTotalCart] = useState(0);
   const [priceKM, setPriceKM] = useState(0);

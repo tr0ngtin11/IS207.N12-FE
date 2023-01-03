@@ -68,10 +68,10 @@ const Dashboard = () => {
         console.log("hoadon", res.hoadon);
         // setHoaDon1(res.hoadon);
         const hoadon4 = res.hoadon;
-        for (var index = 0; index < 12; index++) {
+        for (let index = 0; index < 12; index++) {
           const hoadon1 = res.hoadon;
 
-          const thang = parseInt(index + 1);
+          const thang = parseInt(index);
           const hoadon2 = hoadon1.filter(
             (item1) => new Date(item1?.NgayHD).getMonth() === thang
           );
@@ -83,7 +83,7 @@ const Dashboard = () => {
             return accumulator;
           }, 0);
           dataHoaDon.push({
-            thang: "Tháng" + " " + (index + 2),
+            thang: "Tháng" + " " + (index + 1),
             tongtien: total,
           });
         }
