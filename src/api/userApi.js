@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "https://is207n12-be-production.up.railway.app/api";
+const baseUrl = "http://127.0.0.1:8000/api";
 
-export const  fetchUser = () => {
+export const fetchUser = () => {
   return new Promise(async (resolve, reject) => {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -12,9 +12,9 @@ export const  fetchUser = () => {
       }
 
       const { data } = await axios.get(`${baseUrl}/user`, {
-        headers: {'Authorization': 'Bearer '+accessToken}
+        headers: { Authorization: "Bearer " + accessToken },
       });
-console.log("data",data);
+      console.log("data", data);
       resolve(data);
     } catch (error) {
       reject(error.response.data);
@@ -51,9 +51,13 @@ export const changePassword = (userInfor, id) => {
         reject({ error: true, message: "Token not found!" });
       }
 
-      const { data } = await axios.post(`${baseUrl}/user/changepassword/${id}`, userInfor, {
-        headers: { Authorization: "Bearer " + accessToken },
-      });
+      const { data } = await axios.post(
+        `${baseUrl}/user/changepassword/${id}`,
+        userInfor,
+        {
+          headers: { Authorization: "Bearer " + accessToken },
+        }
+      );
       console.log("data", data);
       resolve(data);
     } catch (error) {
@@ -61,4 +65,3 @@ export const changePassword = (userInfor, id) => {
     }
   });
 };
-

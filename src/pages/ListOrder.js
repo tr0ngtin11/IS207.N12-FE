@@ -62,7 +62,7 @@ const ListOrder = () => {
   const handleClickProduct = async (e) => {
     console.log(e.target.id);
     const idProduct = e.target.id;
-    const baseUrl = `https://is207n12-be-production.up.railway.app/api/sanpham`;
+    const baseUrl = `http://127.0.0.1:8000/api/sanpham`;
     const res = await axios.get(`${baseUrl}/${idProduct}`);
     console.log("nek", res.data.sanpham);
     if (res.data.status) {

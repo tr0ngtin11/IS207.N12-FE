@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://is207n12-be-production.up.railway.app/api";
+const baseUrl = "http://127.0.0.1:8000/api";
 
 export const getAllProducts = (id) => {
   return new Promise(async (resolve, reject) => {
@@ -15,7 +15,6 @@ export const getAllProducts = (id) => {
   });
 };
 
-
 export const getAllProductsAdmin = () => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -28,4 +27,3 @@ export const getAllProductsAdmin = () => {
     }
   });
 };
-

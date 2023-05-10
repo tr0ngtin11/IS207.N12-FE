@@ -11,6 +11,7 @@ import COD from "../images/payment/COD.jpg";
 import momo from "../images/payment/momo.jpg";
 import paypal from "../images/payment/paypal.jpg";
 import { getUserProfile } from "../reducer/user/userAction";
+import { addProductToCard } from "../reducer/product/productSlice";
 
 const Purchase = () => {
   const location = useLocation();
@@ -57,7 +58,7 @@ const Purchase = () => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     console.log(userInfo);
   };
-  
+
   const handleChangeNote = (e) => {
     setUserInfo({ ...userInfo, ghichu: e.target.value });
   };
@@ -87,6 +88,7 @@ const Purchase = () => {
     console.log(formData);
     await PurchaseApi(formData);
     localStorage.removeItem("cartItems");
+    dispatch(addProductToCard(0));
     navigate("/profile", { state: { default: 2 } });
     emailjs
       .send(
