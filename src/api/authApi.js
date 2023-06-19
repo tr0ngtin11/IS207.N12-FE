@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://is207n12-be-production.up.railway.app//api";
+const baseUrl = "https://is207n12-be-production.up.railway.app/api";
 
 export const userLogin = (userInfo) => {
   return new Promise(async (resolve, reject) => {

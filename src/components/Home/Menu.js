@@ -24,7 +24,7 @@ export default function Menu() {
   const handleClickProduct = async (e) => {
     console.log(e.target.id);
     const idProduct = e.target.id;
-    const baseUrl = `https://is207n12-be-production.up.railway.app//api/sanpham`;
+    const baseUrl = `https://is207n12-be-production.up.railway.app/api/sanpham`;
     const res = await axios.get(`${baseUrl}/${idProduct}`);
     console.log("nek", res.data.sanpham);
     if (res.data.status) {
