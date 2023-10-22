@@ -1,48 +1,47 @@
+import React, { useLayoutEffect } from "react";
+import ReactGA from "react-ga4";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import React, { useState, useEffect, useCallback } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Button, Popconfirm } from "antd";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Login from "./components/Auth/Login";
-import { useLayoutEffect } from "react";
-import Register from "./components/Auth/Register";
-import FindYourAccount from "./components/Auth/FindYourAccount";
 import CodeValidation from "./components/Auth/CodeValidation";
+import FindYourAccount from "./components/Auth/FindYourAccount";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 import ResetPassword from "./components/Auth/ResetPassword";
-import ListOrder from "./pages/ListOrder";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-import Purchase from "./pages/Purchase";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Profile/Sidebar";
-import BillDetail from "./pages/BillDetail";
-import MainAdmin from "./pages/admin/MainAdmin";
-import Users_admin from "./components/admin/Users_admin";
-import MainLayout from "./layouts/MainLayout";
-import Staffs_admin from "./components/admin/Staffs_admin";
-import AddPerSon from "./components/admin/FormAdd/AddPerSon";
-import DetailPerSon from "./components/admin/FormAdd/DetailPerSon";
-import Products_admin from "./components/admin/Products_admin";
-import AddProduct from "./components/admin/FormAdd/AddProduct";
-import DetailProduct from "./components/admin/FormAdd/DetailProduct";
-import Orders_admin from "./components/admin/Orders_admin";
 import BillDetailadmin from "./components/admin/BillDetailadmin";
+import Blog from "./components/admin/Blog";
+import BlogDetail from "./components/admin/BlogDetail";
+import Blog_admin from "./components/admin/Blog_admin";
+import Dashboard from "./components/admin/Dashboard";
+import EditBlog from "./components/admin/EditBlog";
+import AddPerSon from "./components/admin/FormAdd/AddPerSon";
+import AddProduct from "./components/admin/FormAdd/AddProduct";
+import AddUser from "./components/admin/FormAdd/AddUser";
+import DetailPerSon from "./components/admin/FormAdd/DetailPerSon";
+import DetailProduct from "./components/admin/FormAdd/DetailProduct";
 import HoaDon from "./components/admin/HoaDon";
 import HoaDonDetail from "./components/admin/HoaDonDetail";
 import HoaDonPDF from "./components/admin/HoaDonPDF";
-import Blog from "./components/admin/Blog";
-import Blog_admin from "./components/admin/Blog_admin";
-import BlogDetail from "./components/admin/BlogDetail";
-import Dashboard from "./components/admin/Dashboard";
 import KhuyenMai from "./components/admin/KhuyenMai";
-import AddUser from "./components/admin/FormAdd/AddUser";
-import EditBlog from "./components/admin/EditBlog";
-import ListBlog from "./pages/ListBlog";
-import Contact from "./pages/Contact";
+import Orders_admin from "./components/admin/Orders_admin";
+import Products_admin from "./components/admin/Products_admin";
+import Staffs_admin from "./components/admin/Staffs_admin";
+import Users_admin from "./components/admin/Users_admin";
+import MainLayout from "./layouts/MainLayout";
 import About from "./pages/About";
+import BillDetail from "./pages/BillDetail";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import ListBlog from "./pages/ListBlog";
+import ListOrder from "./pages/ListOrder";
 import NotFound from "./pages/NotFound";
-import Profile from "./components/Profile/Profile";
+import ProductDetail from "./pages/ProductDetail";
+import Purchase from "./pages/Purchase";
+import MainAdmin from "./pages/admin/MainAdmin";
 const excludeHeaderFooterPath = [
   "/signin",
   "/signup",
@@ -76,8 +75,18 @@ const Wrapper = ({ children }) => {
   }, [location.pathname]);
   return children;
 };
-
 function App() {
+
+ReactGA.initialize("G-2PKPRK3E0Q", {debug: true});
+// ReactGA.send({ hitType: "pageview", page: "/", title: "Custom Title" });
+ReactGA.event({
+  category: 'Button',
+  action: 'Click',
+  label: 'Contact Us'
+});
+
+
+  ReactGA._gaCommandSendPageview('/about/motherfucker')
   return (
     <>
       <Wrapper>

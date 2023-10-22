@@ -1,21 +1,15 @@
-import React from "react";
+import { LoadingOutlined } from "@ant-design/icons";
 import {
-  Avatar,
   Button,
   Col,
-  Image,
   Input,
-  Radio,
   Row,
-  Upload,
-  message,
+  message
 } from "antd";
 import Title from "antd/lib/typography/Title";
-import { ChangePassWordUser } from "../../reducer/user/userAction";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useEffect } from "react";
-import { LoadingOutlined } from "@ant-design/icons";
+import { ChangePassWordUser } from "../../reducer/user/userAction";
 const ChangePassWord = () => {
   const dispatch = useDispatch();
 const [isFirst, setIsFirst] = useState(true);
